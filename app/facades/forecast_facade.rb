@@ -42,6 +42,5 @@ class ForecastFacade
     end
 
     Forecast.new(current_weather, five_day_weather, hourly_weather)
-    # binding.pry
   end
 end

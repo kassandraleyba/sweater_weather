@@ -8,6 +8,12 @@ RSpec.describe 'Forecast API' do
 
     parsed_data = JSON.parse(response.body, symbolize_names: true)
 
-    expect(parsed_data).to be_a(Hash)
+    expect(parsed_data[:data]).to be_a(Hash)
+    expect(parsed_data[:data][:id]).to eq("null")
+    expect(parsed_data[:data][:type]).to eq("forecast")
+    expect(parsed_data[:data][:attributes]).to be_a(Hash)
+    expect(parsed_data[:data][:attributes][:current_weather]).to be_a(Array)
+    expect(parsed_data[:data][:attributes][:five_day_weather]).to be_a(Array)
+    expect(parsed_data[:data][:attributes][:hourly_weather]).to be_a(Array)
   end
 end

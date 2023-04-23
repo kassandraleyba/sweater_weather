@@ -5,7 +5,6 @@ class Api::V1::ForecastController < ApplicationController
     else
       forecast = ForecastFacade.new.find_forecast(params[:location])
       render json: ForecastSerializer.new(forecast)
-      # binding.pry
     end
   end
 end
