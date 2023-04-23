@@ -54,6 +54,6 @@ class Forecast
     }
     end
     hourly_weather
-    binding.pry
+    # binding.pry
   end
 end
