@@ -9,6 +9,7 @@ class User < ApplicationRecord
   
   def generate_api_key
     self.api_key = SecureRandom.hex(16)
+    # user is being given random api key to access page after creation and login
     # generates a random string of 16 hex characters to secure api key
   end
 end
