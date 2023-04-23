@@ -7,9 +7,9 @@ RSpec.describe ForecastFacade do
     forecast = ForecastFacade.new.find_forecast(location)
   
     expect(forecast).to be_a(Forecast)
-    expect(forecast.current_weather[0]).to have_key(:last_updated)
-    expect(forecast.current_weather[0]).to have_key(:temp_f)
-    expect(forecast.current_weather[0]).to have_key(:feelslike_f)
+    expect(forecast.current_weather).to have_key(:last_updated)
+    expect(forecast.current_weather).to have_key(:temp_f)
+    expect(forecast.current_weather).to have_key(:feelslike_f)
 
     expect(forecast.five_day_weather[0]).to have_key(:date)
     expect(forecast.five_day_weather[0]).to have_key(:sunrise)
@@ -25,8 +25,8 @@ RSpec.describe ForecastFacade do
   
     forecast = ForecastFacade.new.find_forecast(location)
 
-    expect(forecast.current_weather[0]).to_not have_key(:temp_c)
-    expect(forecast.current_weather[0]).to_not have_key(:feelslike_c)
+    expect(forecast.current_weather).to_not have_key(:temp_c)
+    expect(forecast.current_weather).to_not have_key(:feelslike_c)
 
     expect(forecast.five_day_weather[0]).to_not have_key(:avgtemp_c)
     expect(forecast.five_day_weather[0]).to_not have_key(:maxtemp_c)

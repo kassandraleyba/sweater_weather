@@ -12,8 +12,8 @@ RSpec.describe 'Forecast API' do
     expect(parsed_data[:data][:id]).to eq("null")
     expect(parsed_data[:data][:type]).to eq("forecast")
     expect(parsed_data[:data][:attributes]).to be_a(Hash)
-    expect(parsed_data[:data][:attributes][:current_weather]).to be_a(Array)
-    expect(parsed_data[:data][:attributes][:five_day_weather]).to be_a(Array)
-    expect(parsed_data[:data][:attributes][:hourly_weather]).to be_a(Array)
+    expect(parsed_data[:data][:attributes][:current_weather].keys).to eq([:last_updated, :temp_f, :feelslike_f, :humidity, :uv, :visibility, :text, :icon])
+    expect(parsed_data[:data][:attributes][:five_day_weather].first.keys).to eq([:date, :sunrise, :sunset, :max_temp, :min_temp, :condition])
+    expect(parsed_data[:data][:attributes][:hourly_weather].first.keys).to eq([:time, :temp_f, :condition])
   end
 end
