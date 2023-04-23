@@ -46,5 +46,6 @@ RSpec.describe Forecast do
 
     #current weather
     expect(forecast).to be_a(Forecast)
+    binding.pry
   end
 end

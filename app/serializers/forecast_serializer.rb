@@ -1,8 +1,6 @@
 class ForecastSerializer
   include JSONAPI::Serializer
-  
-  attributes  :id, 
-              :current_weather, 
-              :daily_weather, 
-              :hourly_weather
+  set_type :forecast #data, id, type portion
+
+  attributes :current_weather, :five_day_weather, :hourly_weather
 end
