@@ -5,9 +5,9 @@ class Forecast
     @id = nil
     @type = 'forecast'
     @attributes = {
-      current_weather: current_weather(data[:current]),
-      daily_weather: five_day_weather(data),
-      hourly_weather: hourly_weather(data)
+      :current_weather => current_weather(data[:current]),
+      :daily_weather => five_day_weather(data),
+      :hourly_weather => hourly_weather(data)
     }
   end
 
@@ -55,5 +55,13 @@ class Forecast
     end
     hourly_weather
     # binding.pry
+  end
+
+  def to_json(args)
+    {
+      id: id,
+      type: type,
+      attributes: attributes
+    }.to_json(args)
   end
 end
