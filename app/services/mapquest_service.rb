@@ -1,6 +1,7 @@
 class MapquestService
-  def find_city_state(location)
+  def find_lat_long(location)
     get_url("/geocoding/v1/address?location=#{location}")
+    #use to retrieve lat and long for weather api
   end
   
   def get_url(url)
