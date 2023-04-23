@@ -187,68 +187,56 @@
           null
         ]
       },
-      "/Users/kassandraleyba/turing_work/3mod/projects/sweater_weather/app/services/mapquest_service.rb": {
+      "/Users/kassandraleyba/turing_work/3mod/projects/sweater_weather/app/poros/weather.rb": {
         "lines": [
           1,
           1,
-          1,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
           null,
           null,
-          1,
-          null,
-          1,
-          1,
-          1,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/kassandraleyba/turing_work/3mod/projects/sweater_weather/spec/services/weather_service_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          0,
-          null,
-          0,
           null,
           null,
-          null
-        ]
-      },
-      "/Users/kassandraleyba/turing_work/3mod/projects/sweater_weather/app/services/weather_service.rb": {
-        "lines": [
-          1,
-          1,
-          0,
           null,
           null,
-          1,
-          0,
-          0,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
           1,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       }
     },
-    "timestamp": 1682200290
+    "timestamp": 1682219517
   }
 }
