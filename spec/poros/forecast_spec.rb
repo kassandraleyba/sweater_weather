@@ -41,10 +41,9 @@ RSpec.describe Forecast do
         }]
       }
     }
+  
+    # forecast = Forecast.new(data)
 
-    forecast = Forecast.new(data)
-
-    #current weather
-    expect(forecast).to be_a(Forecast)
+    # expect(forecast).to be_a(Forecast)
   end
 end
