@@ -4,12 +4,6 @@ class ForecastFacade
     lat = map_data[:results][0][:locations][0][:latLng][:lat] # find lat in nested hash
     long = map_data[:results][0][:locations][0][:latLng][:lng] # find long in nested hash
     forecast_data = WeatherService.new.find_5_day_forecast(lat, long) # returns hash with 5 day forecast (includes current weather) 
-    city = map_data[:results][0][:locations][0][:adminArea5]
-    # binding.pry
-    salary_data = TeleportService.new.find_urban_area_salaries(city)
-    # parsing error - getting data in service
-
-    # salary_data = TeleportService.new.find_salaries_by_destination(city)
 
     # don't need to iterate through since this is 1 day worth of data
     current_weather = {
@@ -54,16 +48,5 @@ class ForecastFacade
     # initially tried setting this up in the poro
     # but couldn't figure out how to get it to work correctly
     Forecast.new(current_weather, five_day_weather, hourly_weather)
-
-    # need to filter through jobs and iterate through salaries
-    # binding.pry
-    salaries = salary_data.map do |salary|
-      {
-        title: salary[:job][:title],
-        min: salary[:salary_percentiles][:percentile_25].round(2),
-        max: salary[:salary_percentiles][:percentile_25].round(2)
-      }
-    end
-    Salary.new(salaries)
   end
 end
