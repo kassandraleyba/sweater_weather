@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SalaryFacade do
   it "can get salaries for a location" do
-    location = "chicago,il"
+    location = "chicago"
 
     salaries = SalaryFacade.new.find_salary(location)
     
