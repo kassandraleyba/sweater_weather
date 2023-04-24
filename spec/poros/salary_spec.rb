@@ -62,12 +62,15 @@ RSpec.describe Salary do
       :temperature => "83 F"
     }
 
-    salary = Salary.new(salaries, forecast)
+    destination = "chicago"
+
+    salary = Salary.new(salaries, forecast, destination)
 
     expect(salary).to be_a(Salary)
     expect(salary.id).to eq("null")
     expect(salary.type).to eq('salaries')
     expect(salary.salaries).to eq(salaries)
     expect(salary.forecast).to eq(forecast)
+    expect(salary.destination).to eq(destination)
   end
 end

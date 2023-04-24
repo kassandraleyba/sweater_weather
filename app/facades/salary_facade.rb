@@ -22,11 +22,13 @@ class SalaryFacade
     end
 
     forecast = {
-      text: forecast_data[:current][:condition][:text]
+      text: forecast_data[:current][:condition][:text],
       temp_f: forecast_data[:current][:temp_f]
     }
 
-    Salary.new(salaries, forecast)
+    destination = location
+    
+    Salary.new(titles, forecast, destination)
     #text and temp_f
   end
 end
