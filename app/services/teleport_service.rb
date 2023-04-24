@@ -4,10 +4,6 @@ class TeleportService
     get_url("/api/urban_areas/#{city}/salaries/")
     # can find chicago salaries with this url
   end
-
-  def find_salaries_by_destination(location)
-    get_url("/api/v1/salaries?destination=#{location}")
-  end
   
   def get_url(url)
     response = conn.get(url)
