@@ -5,9 +5,6 @@ class TeleportService
     # can find chicago salaries with this url
   end
 
-  # should follow this format
-  # GET /api/v1/salaries?destination=chicago
-
   def find_salaries_by_destination(location)
     get_url("/api/v1/salaries?destination=#{location}")
   end
