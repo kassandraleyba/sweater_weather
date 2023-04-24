@@ -4,7 +4,7 @@ class ForecastFacade
     lat = map_data[:results][0][:locations][0][:latLng][:lat] # find lat in nested hash
     long = map_data[:results][0][:locations][0][:latLng][:lng] # find long in nested hash
     forecast_data = WeatherService.new.find_5_day_forecast(lat, long) # returns hash with 5 day forecast (includes current weather)
-    # example for final: teleport service variable = TeleportService.new
+    # salaries = TeleportService.new
 
     # don't need to iterate through since this is 1 day worth of data
     current_weather = {
@@ -49,5 +49,7 @@ class ForecastFacade
     # initially tried setting this up in the poro
     # but couldn't figure out how to get it to work correctly
     Forecast.new(current_weather, five_day_weather, hourly_weather)
+
+    Salary.new()
   end
 end
