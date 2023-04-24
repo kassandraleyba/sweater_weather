@@ -12,8 +12,7 @@ RSpec.describe TeleportService do
 
   xit "can find salaries by destination" do
     data = TeleportService.new.find_salaries_by_destination("chicago")
-    
-    # binding.pry
+   
     expect(data).to be_a(Hash)
   end
 end

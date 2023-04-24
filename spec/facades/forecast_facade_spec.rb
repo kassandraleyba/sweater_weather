@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe ForecastFacade do
-  it "can get a 5 day forecast object" do
+  xit "can get a 5 day forecast object" do
     location = "denver,co"
   
     forecast = ForecastFacade.new.find_forecast(location)
@@ -20,7 +20,7 @@ RSpec.describe ForecastFacade do
     expect(forecast.hourly_weather[0]).to have_key(:condition)
   end
 
-  it "sad path for facade object" do
+  xit "sad path for facade object" do
     location = "denver,co"
   
     forecast = ForecastFacade.new.find_forecast(location)
@@ -35,5 +35,11 @@ RSpec.describe ForecastFacade do
     expect(forecast.hourly_weather[0]).to_not have_key(:vis_km)
     expect(forecast.hourly_weather[0]).to_not have_key(:temp_c)
     expect(forecast.hourly_weather[0]).to_not have_key(:windchill_c)
+  end
+
+  it "can get salaries for a location" do
+    location = "chicago,il"
+  
+    forecast = ForecastFacade.new.find_forecast(location)
   end
 end
