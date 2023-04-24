@@ -25,6 +25,7 @@ RSpec.describe ForecastFacade do
   
     forecast = ForecastFacade.new.find_forecast(location)
 
+    expect(forecast).to be_a(Forecast)
     expect(forecast.current_weather).to_not have_key(:temp_c)
     expect(forecast.current_weather).to_not have_key(:feelslike_c)
 
@@ -40,6 +41,8 @@ RSpec.describe ForecastFacade do
   it "can get salaries for a location" do
     location = "chicago,il"
   
-    forecast = ForecastFacade.new.find_forecast(location)
+    salaries = ForecastFacade.new.find_urban_area_salaries(location)
+
+    expect(salaries).to be_a(Salary)
   end
 end

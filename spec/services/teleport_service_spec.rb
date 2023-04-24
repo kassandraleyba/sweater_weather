@@ -6,7 +6,7 @@ RSpec.describe TeleportService do
     data = TeleportService.new.find_urban_area_salaries("slug:chicago")
     #chicago id = dp3wnz
     #slug:chicago
-    binding.pry
+    # binding.pry
     expect(data).to be_a(Hash)
   end
 

@@ -5,9 +5,11 @@ class ForecastFacade
     long = map_data[:results][0][:locations][0][:latLng][:lng] # find long in nested hash
     forecast_data = WeatherService.new.find_5_day_forecast(lat, long) # returns hash with 5 day forecast (includes current weather) 
     city = map_data[:results][0][:locations][0][:adminArea5]
-    salary_data = TeleportService.new.find_urban_area_salaries(city)
     # binding.pry
-    # parsing error
+    salary_data = TeleportService.new.find_urban_area_salaries(city)
+    # parsing error - getting data in service
+
+    # salary_data = TeleportService.new.find_salaries_by_destination(city)
 
     # don't need to iterate through since this is 1 day worth of data
     current_weather = {
