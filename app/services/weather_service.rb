@@ -1,6 +1,7 @@
 class WeatherService
   def find_5_day_forecast(lat, long)
     get_url("/v1/forecast.json?q=#{lat},#{long}&days=5")
+    # contains current weather, 5 day forecast, and hourly forecast
   end
   
   def get_url(url)
