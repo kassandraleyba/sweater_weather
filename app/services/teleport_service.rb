@@ -1,8 +1,10 @@
 class TeleportService
-  def find_urban_area_salaries_by_id(id)
-    get_url("/api/urban_areas/#{id}/salaries/")
+  def find_urban_area_salaries(city)
+    # get_url("/api/urban_areas/#{id}/salaries/")
+    get_url("/api/urban_areas/#{city}/salaries/")
     # can find chicago salaries with this url
   end
+
   # should follow this format
   # GET /api/v1/salaries?destination=chicago
 
