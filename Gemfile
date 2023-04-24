@@ -43,8 +43,6 @@ group :development, :test do
   # gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'faker-medical'
-  gem 'launchy'
   gem 'orderly'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
