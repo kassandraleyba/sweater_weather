@@ -5,14 +5,19 @@ class Salary
     @id = id
     @type = type
     @salaries = salaries
-    binding.pry
+    # binding.pry
   end
 
   def salary_info
-    {
-      title: @salaries[:title],
-      min: @salaries[:salary_percentiles][:percentile_25].round(2),
-      max: @salaries[:salary_percentiles][:percentile_75].round(2)
-    }
+    salaries = @salaries[:salaries].map do |salary|
+      {
+        title: salary[:job][:title],
+        min: salary[:salary_percentiles][:percentile_25].round(2),
+        max: salary[:salary_percentiles][:percentile_25].round(2)
+      }
+    end
+    salaries
+    binding.pry
+    # maybe put this in facade?
   end
 end
