@@ -1,6 +1,4 @@
 class Api::V1::RoadtripController < ApplicationController
-  # before_action :authenticate_user!
-
   def create
     if !params[:origin].present?
       render json: { error: "Please enter a location" }, status: 400
@@ -9,7 +7,6 @@ class Api::V1::RoadtripController < ApplicationController
     else
       forecast = RoadtripFacade.new.find_roadtrip_info(params[:origin], params[:destination])
     if forecast.is_a?(Roadtrip)
-      # roadtrip = Roadtrip.new(roadtrip_params.merge(user_id: current_user.id))
       forecast = RoadtripFacade.new.find_roadtrip_info(params[:origin], params[:destination])
       render json: RoadtripSerializer.new(forecast)
     else
