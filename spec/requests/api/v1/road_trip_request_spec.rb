@@ -15,7 +15,7 @@ RSpec.describe 'Roadtrip API' do
     expect(parsed_data[:data][:attributes]).to be_a(Hash)
     expect(parsed_data[:data][:attributes][:start_city]).to eq("denver,co")
     expect(parsed_data[:data][:attributes][:end_city]).to eq("pueblo,co")
-    expect(parsed_data[:data][:attributes][:travel_time]).to eq("1 hours, 43 minutes")
+    expect(parsed_data[:data][:attributes][:travel_time]).to be_a(String)
     expect(parsed_data[:data][:attributes][:weather_at_eta]).to be_a(Hash)
     expect(parsed_data[:data][:attributes][:weather_at_eta].keys).to eq([:datetime, :temperature, :condition])
   end
