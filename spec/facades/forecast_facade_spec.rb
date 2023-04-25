@@ -25,6 +25,7 @@ RSpec.describe ForecastFacade do
   
     forecast = ForecastFacade.new.find_forecast(location)
 
+    expect(forecast).to be_a(Forecast)
     expect(forecast.current_weather).to_not have_key(:temp_c)
     expect(forecast.current_weather).to_not have_key(:feelslike_c)
 
