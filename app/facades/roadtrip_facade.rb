@@ -31,7 +31,8 @@ class RoadtripFacade
       }
     else
       if travel_time[:info].present? && travel_time[:info][:statuscode] == 0
-     
+        return { error: "Destination is impossible" }, status: 400
+      else
         return { error: "Unable to find travel time" }, status: 400
       end
     end
