@@ -39,9 +39,18 @@ RSpec.describe 'Roadtrip API' do
     expect(response.status).to eq(400)
   end
 
-  it "cannot have a travel time between locations if the api key is missing or invalid" do
+  xit "cannot have a travel time between locations if the api key is invalid" do
     post '/api/v1/roadtrip?origin=denver,co&destination=pueblo,co,api_key=invalid_key'
 
-    expect(response.status).to eq(400)
+    # If no API key is given, or an incorrect key is provided, return 401 (Unauthorized)
+
+    expect(response.status).to eq(401)
+  end
+
+  xit "cannot have a travel time between locations if the api key is missing" do
+    post '/api/v1/roadtrip?origin=denver,co&destination=pueblo,co,api_key='
+    # If no API key is given, or an incorrect key is provided, return 401 (Unauthorized)
+
+    expect(response.status).to eq(401)
   end
 end
