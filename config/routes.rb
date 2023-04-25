@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :forecast, only: [:index]
       post :users, to: 'users#create'
       post :sessions, to: 'sessions#create'
+      post :roadtrip, to: 'roadtrip#create'
     end
   end
 end

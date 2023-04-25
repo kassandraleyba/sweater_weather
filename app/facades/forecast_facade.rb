@@ -36,7 +36,8 @@ class ForecastFacade
     # need to iterate through to get the hourly forecast
     hourly_weather = forecast_data[:forecast][:forecastday][0][:hour].map do |hour|
       {
-        time: hour[:time],
+        # time: hour[:time], # need to change to only show hour
+        time: DateTime.parse(hour[:time]).strftime("%H:%M"),
         temp_f: hour[:temp_f],
         condition: {
           text: hour[:condition][:text],
