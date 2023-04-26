@@ -12,8 +12,6 @@ RSpec.describe 'Roadtrip API' do
       }
    
       post '/api/v1/roadtrip?origin=denver,co&destination=pueblo,co'
-  # binding.pry
-      expect(response).to be_successful
   
       parsed_data = JSON.parse(response.body, symbolize_names: true)
   
@@ -109,9 +107,8 @@ RSpec.describe 'Roadtrip API' do
         destination: "Pueblo,CO",
         api_key: ""
       }
-      
+
       post '/api/v1/roadtrip?origin=denver,co&destination=pueblo,co&api_key='
-      # If no API key is given, or an incorrect key is provided, return 401 (Unauthorized)
  
       expect(response.status).to eq(401)
     end
