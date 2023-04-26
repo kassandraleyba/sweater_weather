@@ -20,7 +20,7 @@ class RoadtripFacade
       # iterate all the days, make sure dates match
       # iterate through all the hours, and find the hour that matches the arrival time
       # create a hash with the data from that hour
-      x = forecast_data[:forecast][:forecastday].each do |day|
+      forecast_data[:forecast][:forecastday].each do |day|
         next unless arrival_time.to_s.include?(day[:date])
       
         day[:hour].each do |hour|
