@@ -28,6 +28,7 @@ RSpec.describe ForecastFacade do
     it "sad path for facade object" do
       VCR.use_cassette('sad_forecast_facade_denver_co') do
   
+
         location = "denver,co"
       
         forecast = ForecastFacade.new.find_forecast(location)
